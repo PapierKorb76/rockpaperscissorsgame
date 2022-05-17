@@ -2,6 +2,11 @@ const btnScissors = document.querySelector('#scissors');
 const btnRock = document.querySelector('#rock');
 const btnPaper = document.querySelector('#paper');
 const resultsContainer = document.querySelector('.results-container');
+const computerPoints = document.querySelector('#computer-h2');
+const playerPoints = document.querySelector('#player-h2');
+const computerSign = document.querySelector('.computer-points');
+const playerSign = document.querySelector('.player-points');
+
 
 /*
 console.log(btnScissors.id);
@@ -42,23 +47,29 @@ function computerPlay() {
     return PC_Answer;
 }
 
+let playerCont = 0;
+let PCCont = 0;
+
 function playRound(playerSelection, computerSelection) {
+    const content = document.createElement('div');
+
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection == computerSelection) {
-        const content = document.createElement('div');
         content.classList.add('content');
         content.textContent = 'Nobody Won!';
         resultsContainer.appendChild(content);
     } else if ((playerSelection == "rock" && computerSelection == "scissors") ||
         (playerSelection == "scissors" && computerSelection == "paper") ||
         (playerSelection == "paper" && computerSelection == "rock")) {
-            const content = document.createElement('div');
+            playerCont ++;
+            playerPoints.innerHTML = playerCont;
             content.classList.add('content');
             content.textContent = "You won! The " + playerSelection + " beats the " + computerSelection + "!";
             content.style.color = 'green';
             resultsContainer.appendChild(content);
     } else {
-            const content = document.createElement('div');
+            PCCont ++;
+            computerPoints.innerHTML = PCCont;
             content.classList.add('content');
             content.textContent = "You lost! The " + computerSelection + " beats the " + playerSelection + "!";
             content.style.color = 'red';
@@ -66,35 +77,30 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// // function game() {
-// //     let playerCont = 0;
-// //     let PCCont = 0;
-// //     for (let i = 0; i < 5; i++) {
-// //         computerSelection = computerPlay();
-// //         console.log("The PC Move: " + computerSelection);
-// //         playerSelection = prompt("Insert your move: ");
-// //         console.log(playRound(playerSelection, computerSelection));
 
-// //         if (playRound(playerSelection, computerSelection).includes("You won!")) {
-// //             playerCont++;
-// //         } else if (playRound(playerSelection, computerSelection).includes("You lost!")) {
-// //             PCCont++;
-// //         } else if ("Nobody won!") {
-// //             playerCont == playerCont;
-// //             PCCont == PCCont;
-// //         }
-// //         console.log("Player: " + playerCont + "   VS   " + "PC: " + PCCont);
-// //     }
 
-// //     if (playerCont > PCCont) {
-// //         return "You won the game with " + playerCont + " points";
-// //     } else if (playerCont < PCCont) {
-// //         return "You lost the game, the PC Won with " + PCCont + " points";
-// //     } else {
-// //         return "Tie! " + "Player Points: " + playerCont + " and " + "PC Points: " + PCCont;
-// //     }
-// // }
+// function game() {
+//     let playerCont = 0;
+//     let PCCont = 0;
+//     while(playerCont != 5 || PCCont != 5)
+//     computerSelection = computerPlay();
+//         if (content.style.color == 'green') {
+//             playerCont++;
+//             playerPoints.style.color = 'blue';
+//             playerPoints = playerCont;
+//         } else if (playRound(playerSelection, computerSelection).includes("You lost!")) {
+//             PCCont++;
+//         } else if ("Nobody won!") {
+//             playerCont == playerCont;
+//             PCCont == PCCont;
+//         }
+//         console.log("Player: " + playerCont + "   VS   " + "PC: " + PCCont);
 
-// let playerSelection;
-// let computerSelection;
-// console.log(game());
+//     if (playerCont > PCCont) {
+//         return "You won the game with " + playerCont + " points";
+//     } else if (playerCont < PCCont) {
+//         return "You lost the game, the PC Won with " + PCCont + " points";
+//     } else {
+//         return "Tie! " + "Player Points: " + playerCont + " and " + "PC Points: " + PCCont;
+//     }
+// }
