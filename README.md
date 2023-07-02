@@ -4,21 +4,21 @@
 
 This project was completed for The Odin Project Javascript Rock, Paper, Scissors Game Assignment. The aim of the project was to make a minigame with JS and a responsive design with CSS.
 
-![alt text](pizza.jpeg)
+![alt text]()
 
 ## Live Demo
-[Pizzack Website](https://papierkorb76.github.io/restaurant-page/)
+[Rock Paper Scissors Game](https://papierkorb76.github.io/restaurant-page/)
 
 ## Improvements
 
 Features we are going to add to this app:
 
-- Responsive Web Design
-- Website with React JS Framework
-- Better Images
+- Better Responsive Web Design
+- Refactoring with React JS Framework
+- Better Icons
+- Better Overall Gameplay Experience
 
 ## Built With
-- Webpack
 - Vanilla JS
 - CSS3
 - HTML5
